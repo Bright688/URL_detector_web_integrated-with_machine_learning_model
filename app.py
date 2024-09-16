@@ -145,7 +145,7 @@ def classify_url(url, model, scaler, feature_columns_order):
             features_df[col] = 0
     
     features_df = features_df[feature_columns_order]
-    
+    features_df = features_df.fillna(0)
     
     # Scale and predict
     features_scaled = scaler.transform(features_df)
